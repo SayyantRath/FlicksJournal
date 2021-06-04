@@ -5,7 +5,7 @@ import Card from '../UI/Card';
 //import ExpensesList from './ExpensesList';
 import './Movies.css';
 
-const Expenses = (props) => {
+const Movies = (props) => {
   const [filteredYear, setFilteredYear] = useState('2020');
   /*
   const filterChangeHandler = (selectedYear) => {
@@ -31,4 +31,4 @@ const Expenses = (props) => {
   );
 };
 
-export default Expenses;
+export default Movies;

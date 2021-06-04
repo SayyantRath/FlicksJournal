@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import { Layout } from "antd";
 import Movies from "./Components/Movies/Movies";
 import "./App.css";
@@ -12,8 +12,8 @@ const App = () => {
   const [results, setResults] = useState(null);
 
   const searchHandler = (queryResults) => {
-    console.log(queryResults);
-    setResults(queryResults);
+    console.log(queryResults.Search);
+    setResults(queryResults.Search);
   };
 
   return (
@@ -24,7 +24,7 @@ const App = () => {
       <div className= "divider"/>
       <Content>
         <DescriptionSearch onSearch={searchHandler}/>  
-        <Movies toDisplay={results}/>
+        <Movies />
       </Content>
     </Layout>
   );
