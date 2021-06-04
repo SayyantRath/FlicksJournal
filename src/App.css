@@ -1,0 +1,53 @@
+@import '~antd/dist/antd.css';
+
+.layout{
+  background-image: linear-gradient(to bottom right, rgba(255, 174, 0, 0.925), #5e17eb);
+  height: 100vh;
+}
+
+.header{
+  background-color: #5e17eb;
+  display: flex;
+  flex-direction: row;
+}
+
+.title {
+  margin-left: 30px;
+  margin-right: 200px;
+  width: 300px;
+  height: 100%;
+  text-align: center;
+  color: black;
+  background-color: rgb(52, 209, 209);
+}
+
+.divider{
+  height: 10px;
+  width: 100%;
+  background-color: darkslategrey;
+}
+
+.description-search{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.description-search__big{
+  color: white;
+  font-size: 40px;
+}
+
+.description-search__small{
+  color: black;
+}
+
+.description-search__searchBar{
+  margin-top: 15px;
+  justify-content: center;
+  width: 700px;
+}
