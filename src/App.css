@@ -1,8 +1,8 @@
 @import '~antd/dist/antd.css';
 
 .layout{
-  background-image: linear-gradient(to bottom right, rgba(255, 174, 0, 0.925), #5e17eb);
-  height: 100vh;
+  background-image: linear-gradient(to bottom right, #4BC6CC, #19225f);
+  height: 100%;
 }
 
 .header{
@@ -47,7 +47,9 @@
 }
 
 .description-search__searchBar{
+  display: flex;
+  position: flex;
   margin-top: 15px;
   justify-content: center;
-  width: 700px;
+  max-width: 700px;
 }
