@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Input, Button } from "antd";
+import "./DescriptionSearch.css";
 
 const { Search } = Input;
 
@@ -37,7 +38,6 @@ const DescriptionSearch = (props) => {
       <div className="description-search__searchBar">
         <Search
           placeholder="Search movie by name"
-          allowClear
           enterButton="Lights. Cameras. Action!"
           size="large"
           onSearch={onSearch}
