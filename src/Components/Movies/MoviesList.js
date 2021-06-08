@@ -1,9 +1,12 @@
 import MovieItem from './MovieItem';
 import './MoviesList.css';
 
-const ExpensesList = (props) => {
-  if (props.results.length === 0) {
-    return <h2 className='expenses-list__fallback'>Found no expenses.</h2>;
+const MoviesList = (props) => {
+
+  console.log(props.results);
+
+  if (props.results.Response === "False" || props.results.length === 0) {
+    return <h2 className='expenses-list__fallback'>Found no movies.</h2>;
   }
 
   const showModal = (id) => {
@@ -26,4 +29,4 @@ const ExpensesList = (props) => {
   );
 };
 
-export default ExpensesList;
+export default MoviesList;

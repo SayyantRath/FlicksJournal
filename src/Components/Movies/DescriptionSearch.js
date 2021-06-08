@@ -8,12 +8,10 @@ const DescriptionSearch = (props) => {
   const [page, setPage] = useState("1");
 
   const onSearch = (event) => {
-    console.log(event);
-    console.log(query);
     setQuery(event);
   };
 
-  const clickHandler = () => {
+  const pageChangeHandler = () => {
     setPage((prevState) => parseInt(prevState) + 1);
     console.log(page);
   }
@@ -36,7 +34,6 @@ const DescriptionSearch = (props) => {
         Access a movie's most essential details through this easy to use
         Internet movie database{" "}
       </p>
-      <Button onClick={clickHandler}>Click me</Button>
       <div className="description-search__searchBar">
         <Search
           placeholder="Search movie by name"

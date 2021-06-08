@@ -18,7 +18,7 @@ const ExpenseItem = (props) => {
     <li>
       <Card className='expense-item'>
         <div className='expense-item__description'>
-            <img className="Poster" alt={props.title} src={props.img} />
+            <img className='expense-item__poster' alt={props.title} src={props.img} />
             <h2>{props.title} ({props.year})</h2>
             <Button type="primary" onClick={clickHandler} className='expense-item__price'>Details</Button>
           </div>

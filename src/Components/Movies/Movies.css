@@ -5,3 +5,10 @@
   width: 90rem;
   max-width: 95%;
 }
+
+.pages {
+  margin-top: 20px;
+  background-color: #4BC6CC;
+  border-radius: 10px;
+  padding: 10px;
+}

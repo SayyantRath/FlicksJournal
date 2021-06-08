@@ -13,10 +13,19 @@ const App = () => {
   const [numResults, setNumResults] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [modalResults, setModalResults] = useState([]);
+  const [query, setQuery] = useState("batman");
+  const [page, setPage] = useState('1');
+  const [pageSize, setPageSize] = useState(10);
 
   const searchHandler = (queryResults) => {
+    console.log(queryResults);
     setResults(queryResults);
     setNumResults(queryResults.totalResults);
+  };
+
+  const pageChangeHandler = (newPage, pageChangeResults) => {
+    setPage(newPage);
+    setResults(pageChangeResults);
   };
 
   const onShowModal = (id) => {
@@ -35,6 +44,8 @@ const App = () => {
         <Content>
           <DescriptionSearch onSearch={searchHandler} />
           <Movies
+            query={query}
+            onPageChange={pageChangeHandler}
             onShowModal={onShowModal}
             numResults={numResults}
             results={results}
