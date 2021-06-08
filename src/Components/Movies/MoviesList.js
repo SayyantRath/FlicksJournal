@@ -16,6 +16,7 @@ const ExpensesList = (props) => {
           <MovieItem
             onShowModal={showModal}
             key={movie.imdbID}
+            imdbID={movie.imdbID}
             title={movie.Title}
             year={movie.Year}
             img={movie.Poster}

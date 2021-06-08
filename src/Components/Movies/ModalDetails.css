@@ -1,0 +1,22 @@
+.modal-details{
+  display:flex;
+  flex-direction: row;
+}
+
+.modal-details__info{
+  margin-left: 50px;
+  display:flex;
+  flex-direction: column;
+}
+
+.modal-details__runtime{
+  color: grey;
+}
+
+.modal-details__specific-info__container{
+  margin-top: 10px;
+}
+
+.modal-details__specific-info{
+  margin-top: -15px;
+}

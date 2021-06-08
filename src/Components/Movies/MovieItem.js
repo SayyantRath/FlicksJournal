@@ -5,7 +5,13 @@ import './MovieItem.css';
 const ExpenseItem = (props) => {
 
   const clickHandler = () => {
-    props.onShowModal(props.key);
+
+    fetch(`http://www.omdbapi.com/?i=${props.imdbID}&y=&plot=full&tomatoes=true&r=json&apikey=cb8625d1`)
+      .then((resp) => resp)
+      .then((resp) => resp.json())
+      .then((response) => {
+        props.onShowModal(response);
+      })
   }
 
   return (

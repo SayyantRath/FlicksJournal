@@ -4,6 +4,7 @@ import Movies from "./Components/Movies/Movies";
 import "./App.css";
 import logo from "./FlicksCentral.png";
 import DescriptionSearch from "./Components/Movies/DescriptionSearch";
+import ModalDetails from "./Components/Movies/ModalDetails";
 
 const { Header, Content } = Layout;
 
@@ -11,23 +12,17 @@ const App = () => {
   const [results, setResults] = useState([]);
   const [numResults, setNumResults] = useState(null);
   const [showModal, setShowModal] = useState(false);
-  const [modalResults, setModalResults] = useState(null);
+  const [modalResults, setModalResults] = useState([]);
 
   const searchHandler = (queryResults) => {
-    console.log(queryResults);
     setResults(queryResults);
     setNumResults(queryResults.totalResults);
   };
 
   const onShowModal = (id) => {
+    console.log(id);
     setShowModal(true);
-
-    fetch(`http://www.omdbapi.com/?i=${id}&y=&plot=short&tomatoes=true&r=json&apikey=$cb8625d1`)
-      .then((resp) => resp)
-      .then((resp) => resp.json())
-      .then((response) => {
-        setModalResults(response);
-      })
+    setModalResults(id);
   };
 
   return (
@@ -53,7 +48,9 @@ const App = () => {
             onOk={() => setShowModal(false)}
             okButtonProps={{ type: "ghost" }}
             okText="Exit"
-          />
+          >
+            <ModalDetails details={modalResults}/>
+          </Modal> 
         </Content>
       </Layout>
     </div>
