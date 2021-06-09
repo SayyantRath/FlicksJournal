@@ -4,8 +4,9 @@ import './MoviesList.css';
 const MoviesList = (props) => {
 
   console.log(props.results);
+  console.log(props.response);
 
-  if (props.results.Response === "False" || props.results.length === 0) {
+  if (props.response === "False" || props.results===null || props.results.length === 0) {
     return <h2 className='expenses-list__fallback'>Found no movies.</h2>;
   }
 
@@ -15,7 +16,8 @@ const MoviesList = (props) => {
 
   return (
     <ul className='expenses-list'>
-       {props.results.Search.map((movie) => (
+      <div className='expenses-list__grid'>
+       {props.results.map((movie) => (
           <MovieItem
             onShowModal={showModal}
             key={movie.imdbID}
@@ -25,6 +27,7 @@ const MoviesList = (props) => {
             img={movie.Poster}
           />
         ))}
+      </div>
     </ul>
   );
 };

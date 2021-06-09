@@ -21,7 +21,10 @@ const DescriptionSearch = (props) => {
     fetch(`http://www.omdbapi.com/?s=${query}&page=${page}&type=movie&apikey=cb8625d1`)
       .then((response) => response)
       .then((response) => response.json())
-      .then((data) => props.onSearch(data));
+      .then((data) => {
+        props.onSearch(data);
+        props.onUpdateQuery(query);
+      });
   }, [query, page]);
 
   return (

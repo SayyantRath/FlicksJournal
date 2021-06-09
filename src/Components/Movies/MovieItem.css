@@ -1,10 +1,17 @@
 .expense-item {
-  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
-  margin: 1rem 0;
+  margin: 1rem 1rem 1rem 1rem;
+  height: 438px;
   background-color: #4b4b4b;
+  animation: fadeIn linear 1s;
+  -webkit-animation: fadeIn linear 1s;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
 
 .expense-item__description {
@@ -18,7 +25,11 @@
 }
 
 .expense-item h2 {
-  color: #3a3a3a;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* number of lines to show */
   font-size: 1rem;
   flex: 1;
   margin: 0 1rem;
@@ -35,25 +46,23 @@
   border-radius: 12px;
 }
 
-@media (min-width: 580px) {
-  .expense-item__description {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    flex: 1;
-  }
-
-  .expense-item__description h2 {
-    font-size: 1.25rem;
-  }
-
-  .expense-item__price {
-    font-size: 1.25rem;
-    padding: 0.5rem 1.5rem;
-  }
+.expense-item__description {
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
 }
 
-.expense-item__poster{
+.expense-item__description h2 {
+  font-size: 1.25rem;
+}
+
+.expense-item__price {
+  font-size: 1.25rem;
+  padding: 0.5rem 1.5rem;
+}
+
+.expense-item__poster {
   max-height: 296px;
   max-width: 200px;
 }

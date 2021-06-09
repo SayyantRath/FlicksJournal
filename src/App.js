@@ -9,24 +9,58 @@ import ModalDetails from "./Components/Movies/ModalDetails";
 const { Header, Content } = Layout;
 
 const App = () => {
+  const [status, setStatus] = useState("False");
   const [results, setResults] = useState([]);
   const [numResults, setNumResults] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [modalResults, setModalResults] = useState([]);
   const [query, setQuery] = useState("batman");
-  const [page, setPage] = useState('1');
-  const [pageSize, setPageSize] = useState(10);
+  const [page, setPage] = useState(1);
+  //const [pageSize, setPageSize] = useState(10);
 
   const searchHandler = (queryResults) => {
     console.log(queryResults);
-    setResults(queryResults);
+    if (queryResults.Response==="False"){
+      setResults([]);
+    } else {
+      setResults(queryResults.Search);
+    }
+    setStatus(queryResults.Response);
     setNumResults(queryResults.totalResults);
   };
 
+  const updateQuery = (newQuery) => {
+    setQuery(newQuery);
+  }
+
   const pageChangeHandler = (newPage, pageChangeResults) => {
     setPage(newPage);
-    setResults(pageChangeResults);
+    setResults(pageChangeResults.Search);
   };
+
+  /*
+  const pageSizeChangeHandler = (moreResults) => {
+
+    setPage(prevState => prevState + 1);
+    setResults(prevState => 
+      [...prevState, ...moreResults]);
+
+    /*if (newPageSize != pageSize){
+    
+      fetch(`http://www.omdbapi.com/?s=${query}&page=${nextPage}&type=movie&apikey=cb8625d1`)
+        .then((response) => response)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data.Search);
+          setResults(prevState => 
+            [...prevState, ...data.Search]);
+        });
+      
+      console.log(results);
+      
+    }
+
+  }*/
 
   const onShowModal = (id) => {
     console.log(id);
@@ -42,10 +76,12 @@ const App = () => {
         </Header>
         <div className="divider" />
         <Content>
-          <DescriptionSearch onSearch={searchHandler} />
+          <DescriptionSearch onSearch={searchHandler} onUpdateQuery={updateQuery}/>
           <Movies
+            response={status}
             query={query}
             onPageChange={pageChangeHandler}
+            //onPageSizeChange={pageSizeChangeHandler}
             onShowModal={onShowModal}
             numResults={numResults}
             results={results}

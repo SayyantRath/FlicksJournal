@@ -21,7 +21,7 @@ const ExpenseItem = (props) => {
             <img className='expense-item__poster' alt={props.title} src={props.img} />
             <h2>{props.title} ({props.year})</h2>
             <Button type="primary" onClick={clickHandler} className='expense-item__price'>Details</Button>
-          </div>
+        </div>
       </Card>
     </li>
   );
