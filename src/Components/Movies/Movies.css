@@ -7,8 +7,18 @@
 }
 
 .pages {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
   margin-top: 20px;
-  background-color: #4BC6CC;
+  background-color: #c44b3d;
   border-radius: 10px;
   padding: 10px;
+}
+
+.page-total {
+  color: #DEEEE4;
+  margin-right: 10px;
+  margin-bottom: -14px;
 }

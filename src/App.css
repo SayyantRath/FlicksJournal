@@ -1,15 +1,27 @@
 @import '~antd/dist/antd.css';
 
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
 .layout{
-  background-image: linear-gradient(to bottom right, #4BC6CC, #19225f);
+  /*background-image: linear-gradient(to bottom right, #4BC6CC, #19225f);*/
+  opacity: 0;
+  background-color: #011C33;
   height: 100%;
+  animation: fadeIn 1.5s forwards;
+}
+
+.logo{
+  cursor: pointer;
 }
 
 .header{
   z-index: 9;
   width: 100%;
   position: fixed;
-  background-color: #19225f;
+  background-color: #99441A;
   display: flex;
   flex-direction: row;
 }
@@ -25,36 +37,20 @@
 }
 
 .divider{
+  z-index: 9;
   position:fixed;
   margin-top: 63px;
   height: 10px;
   width: 100%;
-  background-color: darkslategrey;
+  background-color: #E1AD17;
 }
 
-.description-search{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-top: 150px;
-  margin-bottom: 15px;
+.ant-btn-primary {
+  background-color: #c44b3d;
+  border: #c44b3d;
 }
 
-.description-search__big{
-  color: white;
-  font-size: 40px;
-}
-
-.description-search__small{
-  color: black;
-}
-
-.description-search__searchBar{
-  display: flex;
-  position: flex;
-  margin-top: 15px;
-  justify-content: center;
-  max-width: 700px;
-}
+.ant-btn-primary:hover {
+  background-color: #E1AD17;
+  color: #99441A;
+} 

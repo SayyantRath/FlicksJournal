@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Layout, Modal } from "antd";
 import Movies from "./Components/Movies/Movies";
 import "./App.css";
-import logo from "./FlicksCentral.png";
+import camcorder from "./camcorder.JPG";
 import DescriptionSearch from "./Components/Movies/DescriptionSearch";
 import ModalDetails from "./Components/Movies/ModalDetails";
 
@@ -19,6 +19,10 @@ const App = () => {
   const [pageSize, setPageSize] = useState(10);
   const [isHome, setIsHome] = useState(true);
 
+  const refreshPage = () => {
+    window.location.reload();
+  }
+  
   const searchHandler = (queryResults, isHome) => {
     console.log(queryResults);
     if (queryResults.Response==="False"){
@@ -81,6 +85,7 @@ const App = () => {
     <div className="full">
       <Layout className="layout">
         <Header className="header">
+          <img className="logo" src= {camcorder} alt="camera-logo" onClick={refreshPage} />
         </Header>
         <div className="divider" />
         <Content>

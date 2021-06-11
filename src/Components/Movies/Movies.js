@@ -69,10 +69,11 @@ const Movies = (props) => {
       <MoviesHeader isHome={props.isHome} filteredYear={filteredYear} onChangeFilter={filterChangeHandler}/>
       <MoviesList response={props.response} onShowModal = {showModal} results={props.results}/>
       <div className='pages'>
+        <p className="page-total"> {`Total ${props.numResults} items`}</p>
         <Pagination
           total={props.numResults}
           showSizeChanger={false}
-          showTotal={total => `Total ${total} items`}
+          /*showTotal={total => `Total ${total} items`}*/
           onChange={pageChangeHandler}
         />
       </div>
