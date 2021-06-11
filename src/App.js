@@ -16,9 +16,10 @@ const App = () => {
   const [modalResults, setModalResults] = useState([]);
   const [query, setQuery] = useState("batman");
   const [page, setPage] = useState(1);
-  //const [pageSize, setPageSize] = useState(10);
+  const [pageSize, setPageSize] = useState(10);
+  const [isHome, setIsHome] = useState(true);
 
-  const searchHandler = (queryResults) => {
+  const searchHandler = (queryResults, isHome) => {
     console.log(queryResults);
     if (queryResults.Response==="False"){
       setResults([]);
@@ -27,6 +28,7 @@ const App = () => {
     }
     setStatus(queryResults.Response);
     setNumResults(queryResults.totalResults);
+    setIsHome(isHome);
   };
 
   const updateQuery = (newQuery) => {
@@ -34,9 +36,16 @@ const App = () => {
   }
 
   const pageChangeHandler = (newPage, pageChangeResults) => {
+    console.log(pageChangeResults);
     setPage(newPage);
-    setResults(pageChangeResults.Search);
+    setResults(pageChangeResults);
   };
+
+  const filterChangeHandler = filteredResults => {
+    setResults(filteredResults.Search);
+    setNumResults(filteredResults.totalResults);
+    setStatus(filteredResults.Response);
+  }
 
   /*
   const pageSizeChangeHandler = (moreResults) => {
@@ -72,16 +81,17 @@ const App = () => {
     <div className="full">
       <Layout className="layout">
         <Header className="header">
-          <img src={logo} alt="Logo" height="65" />
         </Header>
         <div className="divider" />
         <Content>
           <DescriptionSearch onSearch={searchHandler} onUpdateQuery={updateQuery}/>
           <Movies
+            isHome={isHome}
             response={status}
             query={query}
             onPageChange={pageChangeHandler}
             //onPageSizeChange={pageSizeChangeHandler}
+            onChangeFilter={filterChangeHandler}
             onShowModal={onShowModal}
             numResults={numResults}
             results={results}

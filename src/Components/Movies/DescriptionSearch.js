@@ -5,27 +5,24 @@ import "./DescriptionSearch.css";
 const { Search } = Input;
 
 const DescriptionSearch = (props) => {
-  const [query, setQuery] = useState("batman");
-  const [page, setPage] = useState("1");
+  const [query, setQuery] = useState("Avengers");
+  const [isHome, setIsHome] = useState(true);
 
   const onSearch = (event) => {
     setQuery(event);
+    setIsHome(false);
   };
 
-  const pageChangeHandler = () => {
-    setPage((prevState) => parseInt(prevState) + 1);
-    console.log(page);
-  }
-
   useEffect(() => {
-    fetch(`http://www.omdbapi.com/?s=${query}&page=${page}&type=movie&apikey=cb8625d1`)
+
+    fetch(`http://www.omdbapi.com/?s=${query}&type=movie&apikey=cb8625d1`)
       .then((response) => response)
       .then((response) => response.json())
       .then((data) => {
-        props.onSearch(data);
+        props.onSearch(data, isHome);
         props.onUpdateQuery(query);
       });
-  }, [query, page]);
+  }, [query]);
 
   return (
     <div className="description-search">

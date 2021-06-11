@@ -6,7 +6,10 @@
 }
 
 .header{
-  background-color: #5e17eb;
+  z-index: 9;
+  width: 100%;
+  position: fixed;
+  background-color: #19225f;
   display: flex;
   flex-direction: row;
 }
@@ -22,6 +25,8 @@
 }
 
 .divider{
+  position:fixed;
+  margin-top: 63px;
   height: 10px;
   width: 100%;
   background-color: darkslategrey;
@@ -33,7 +38,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 150px;
   margin-bottom: 15px;
 }
 
