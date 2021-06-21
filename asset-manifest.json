@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/flicksjournal/static/css/main.90b796b4.chunk.css",
+    "main.js": "/flicksjournal/static/js/main.7cc5e956.chunk.js",
+    "main.js.map": "/flicksjournal/static/js/main.7cc5e956.chunk.js.map",
+    "runtime-main.js": "/flicksjournal/static/js/runtime-main.54c14ad6.js",
+    "runtime-main.js.map": "/flicksjournal/static/js/runtime-main.54c14ad6.js.map",
+    "static/css/2.b4e56faa.chunk.css": "/flicksjournal/static/css/2.b4e56faa.chunk.css",
+    "static/js/2.ce088e44.chunk.js": "/flicksjournal/static/js/2.ce088e44.chunk.js",
+    "static/js/2.ce088e44.chunk.js.map": "/flicksjournal/static/js/2.ce088e44.chunk.js.map",
+    "index.html": "/flicksjournal/index.html",
+    "static/css/2.b4e56faa.chunk.css.map": "/flicksjournal/static/css/2.b4e56faa.chunk.css.map",
+    "static/css/main.90b796b4.chunk.css.map": "/flicksjournal/static/css/main.90b796b4.chunk.css.map",
+    "static/js/2.ce088e44.chunk.js.LICENSE.txt": "/flicksjournal/static/js/2.ce088e44.chunk.js.LICENSE.txt",
+    "static/media/camcorder.4c4e1d70.JPG": "/flicksjournal/static/media/camcorder.4c4e1d70.JPG",
+    "static/media/logo.0a43489a.JPG": "/flicksjournal/static/media/logo.0a43489a.JPG"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.54c14ad6.js",
+    "static/css/2.b4e56faa.chunk.css",
+    "static/js/2.ce088e44.chunk.js",
+    "static/css/main.90b796b4.chunk.css",
+    "static/js/main.7cc5e956.chunk.js"
+  ]
+}
