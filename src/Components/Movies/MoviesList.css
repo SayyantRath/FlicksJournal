@@ -1,16 +1,22 @@
-.expenses-list {
+.movies-list {
   list-style: none;
   padding: 0;
 }
 
 @media (min-width: 800px) {
-  .expenses-list__grid {
+  .movies-list__grid {
     display: grid;
     grid-template-columns: auto auto auto auto auto;
   }
 }
 
-.expenses-list__fallback {
+.movies-list__fallback {
   color: white;
   text-align: center;
+}
+
+@media (max-width: 800px){
+  .movies-list__grid{
+    justify-items: center;
+  }
 }

@@ -6,28 +6,32 @@ import "./DescriptionSearch.css";
 const { Search } = Input;
 
 const DescriptionSearch = (props) => {
+  // state variables to hold query settings (home page is defaulted to an Avengers query)
   const [query, setQuery] = useState("Avengers");
   const [isHome, setIsHome] = useState(true);
 
+  // refresh function
   const refreshPage = () => {
     window.location.reload();
   }
   
+  // Search handler
   const onSearch = (event) => {
     setQuery(event);
     setIsHome(false);
   };
 
+  // Effect hook that executes and fetches from API everytime this component is re rendered
   useEffect(() => {
     fetch(`http://www.omdbapi.com/?s=${query}&type=movie&apikey=cb8625d1`)
       .then((response) => response)
       .then((response) => response.json())
       .then((data) => {
-        props.onSearch(data, isHome);
         props.onUpdateQuery(query);
+        props.onSearch(data, isHome);
       });
   }, [query]);
-
+  
   return (
     <div className="description-search">
       <img className="logo" src={logo} alt="logo" onClick={refreshPage}/>

@@ -2,21 +2,20 @@ import MovieItem from './MovieItem';
 import './MoviesList.css';
 
 const MoviesList = (props) => {
-
-  //console.log(props.results);
-  //console.log(props.response);
-
+  
+  // Handle failed fetch requests
   if (props.response === "False" || props.results===null || props.results.length === 0) {
-    return <h2 className='expenses-list__fallback'>Found no movies.</h2>;
+    return <h2 className='movies-list__fallback'>Found no movies.</h2>;
   }
 
+  // Pass id back up to above components to render modal
   const showModal = (id) => {
     props.onShowModal(id);
   }
 
   return (
-    <ul className='expenses-list'>
-      <div className='expenses-list__grid'>
+    <ul className='movies-list'>
+      <div className='movies-list__grid'>
        {props.results.map((movie) => (
           <MovieItem
             onShowModal={showModal}

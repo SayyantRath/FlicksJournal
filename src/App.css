@@ -53,4 +53,10 @@
 .ant-btn-primary:hover {
   background-color: #E1AD17;
   color: #99441A;
-} 
+}
+
+@media (max-width: 800px){
+  .layout{
+    justify-items: center;
+  }
+}

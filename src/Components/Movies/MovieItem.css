@@ -1,4 +1,4 @@
-.expense-item {
+.movie-item {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
@@ -15,7 +15,7 @@
   100% {opacity:1;}
 }
 
-.expense-item__description {
+.movie-item__description {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -25,7 +25,7 @@
   flex: 1;
 }
 
-.expense-item h2 {
+.movie-item h2 {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -37,7 +37,7 @@
   color: white;
 }
 
-.expense-item__price {
+.movie-item__price {
   font-size: 1rem;
   font-weight: bold;
   color: white;
@@ -47,23 +47,31 @@
   border-radius: 12px;
 }
 
-.expense-item__description {
+.movie-item__description {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   flex: 1;
 }
 
-.expense-item__description h2 {
+.movie-item__description h2 {
   font-size: 1.25rem;
 }
 
-.expense-item__price {
+.movie-item__price {
   font-size: 1.25rem;
   padding: 0.5rem 1.5rem;
 }
 
-.expense-item__poster {
-  max-height: 296px;
+.movie-item__poster {
+  height: 296px;
   max-width: 200px;
+}
+
+@media (max-width: 800px){
+  .movie-item{
+    width: auto;
+    justify-items: center;
+    justify-self: center;
+  }
 }
