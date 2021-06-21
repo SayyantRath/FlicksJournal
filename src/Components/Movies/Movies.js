@@ -40,7 +40,7 @@ const Movies = (props) => {
   // Handler for any type of change to pagination feature
   const pageChangeHandler = (page, newPageSize) => {
     // Handles edge case on home page
-    if (page == 0) {
+    if (page === 0) {
       page = 1;
     }
 

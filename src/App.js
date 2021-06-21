@@ -16,7 +16,6 @@ const App = () => {
   const [showModal, setShowModal] = useState(false);
   const [modalResults, setModalResults] = useState([]);
   const [query, setQuery] = useState("batman");
-  const [page, setPage] = useState(1);
   const [isHome, setIsHome] = useState(true);
 
   // Function to refresh page
@@ -43,7 +42,6 @@ const App = () => {
 
   // Function to retrieve the next page's results and pass back down to children for display purposes
   const pageChangeHandler = (newPage, pageChangeResults) => {
-    setPage(newPage);
     setResults(pageChangeResults);
   };
 
