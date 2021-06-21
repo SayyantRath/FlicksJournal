@@ -23,7 +23,7 @@ const DescriptionSearch = (props) => {
 
   // Effect hook that executes and fetches from API everytime this component is re rendered
   useEffect(() => {
-    fetch(`http://www.omdbapi.com/?s=${query}&type=movie&apikey=cb8625d1`)
+    fetch(`https://www.omdbapi.com/?s=${query}&type=movie&apikey=cb8625d1`)
       .then((response) => response)
       .then((response) => response.json())
       .then((data) => {

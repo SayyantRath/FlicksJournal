@@ -16,7 +16,7 @@ const Movies = (props) => {
 
     // Fetch API results which fit criteria year
     fetch(
-      `http://www.omdbapi.com/?s=${props.query}&type=movie&y=${selectedYear}&apikey=cb8625d1`
+      `https://www.omdbapi.com/?s=${props.query}&type=movie&y=${selectedYear}&apikey=cb8625d1`
     )
       .then((response) => response)
       .then((response) => response.json())
@@ -58,7 +58,7 @@ const Movies = (props) => {
 
       // Push URL to URL holding array
       if (pageToGet * 10 < parseInt(props.numResults) + 10) {
-        let URL = `http://www.omdbapi.com/?s=${props.query}&page=${pageToGet}&type=movie&y=${filteredYear}&apikey=cb8625d1`;
+        let URL = `https://www.omdbapi.com/?s=${props.query}&page=${pageToGet}&type=movie&y=${filteredYear}&apikey=cb8625d1`;
         nextPageURLS.push(URL);
       }
     }
