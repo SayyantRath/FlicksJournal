@@ -8,7 +8,7 @@ const MovieItem = (props) => {
     
     // Fetch from API using the movie's ID to fetch more details
     fetch(
-      `http://www.omdbapi.com/?i=${props.imdbID}&y=&plot=full&tomatoes=true&r=json&apikey=cb8625d1`
+      `https://www.omdbapi.com/?i=${props.imdbID}&y=&plot=full&tomatoes=true&r=json&apikey=cb8625d1`
     )
       .then((resp) => resp)
       .then((resp) => resp.json())

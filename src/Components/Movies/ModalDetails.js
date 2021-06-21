@@ -3,7 +3,9 @@ import "./ModalDetails.css";
 const ModalDetails = (props) => {
   return (
     <div className="modal-details">
-      <img alt={props.details.Title} src={props.details.Poster} />
+      <img alt={props.details.Title} src={props.details.Poster === "N/A"
+      ? "https://www.westernheights.k12.ok.us/wp-content/uploads/2020/01/No-Photo-Available.jpg"
+      : props.details.Poster} />
       <div className="modal-details__info">
         <h2>{props.details.Title} ({props.details.Year})</h2>
         <p className="modal-details__runtime"><i>{props.details.Runtime}</i></p>
